@@ -27,11 +27,13 @@ let s:deprecatedCurlOpts = {
 " @return string
 "
 function! s:Shellescape(val)
-  if has("win32")
-    return '"'.substitute(a:val, '["&\\]', '\\&', 'g').'"'
-  else
-    return shellescape(a:val)
-  endif
+  return shellescape(a:val)
+  " TODO
+  " if has("win32")
+  "   return '"'.substitute(a:val, '["&\\]', '\\&', 'g').'"'
+  " else
+  "   return shellescape(a:val)
+  " endif
 endfunction
 
 """
